@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon"
+        href="https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Spotify_logo_without_text.svg/252px-Spotify_logo_without_text.svg.png">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- remix icons -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&family=Amatic+SC:wght@400;700&family=Anek+Malayalam:wght@100..800&family=Arvo:ital,wght@0,400;0,700;1,400;1,700&family=Big+Shoulders+Stencil+Display:wght@100..900&family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Caveat:wght@400..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Gayathri:wght@100;400;700&family=Grey+Qo&family=Hubballi&family=Indie+Flower&family=Inter:wght@100..900&family=Jersey+20+Charted&family=Kaushan+Script&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rajdhani:wght@300;400;500;600;700&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Sacramento&family=Sevillana&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="whole-container">
+        <!-- navbar -->
+        <nav class="main-navbar">
+            <img class="logo" src="./images/logo-spotify.png" alt="no img">
+            <div class="home">
+                <a class="home-icon" href=""><i class="ri-home-5-fill"></i></a>
+                <div class="search-box">
+                    <i class="ri-search-line" aria-hidden="true"></i>
+                    <input type="text" placeholder="  What do you want to play?                                   |">
+                    <i class="ri-window-2-fill"></i>
+                </div>
+            </div>
+            <div class="btns">
+                <button id="zoom-in" class="sign-up">Sign up</button>
+                <button id="zoom-in" class="log-in">Log in</button>
+            </div>
+        </nav>
+
+        <!-- side navbar -->
+        <section class="sidebar">
+            <!-- side navbar with sroll section -->
+            <div class="sidebar-nav ">
+                <ul>
+                    <li><a href="">
+                            <span><i class="fa-solid fa-book"></i></span>
+                            <span class="library">Your Library</span>
+                            <i class="ri-add-fill"></i>
+                        </a></li>
+                    <li>
+                        <div class="sidebar-scroll">
+                            <div class="cp">
+                                <h4>Create your first playlist</h4>
+                                <p>It's easy, we'll help you</p>
+                                <button id="zoom-in">Create playlist</button>
+                            </div>
+                            <div class="cp">
+                                <h4>Let's find some podcasts to follow</h4>
+                                <p>We'll keep you updated on new episodes</p>
+                                <button id="zoom-in">Browse podcasts</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- navbar links -->
+                <div class="privacy">
+                    <ul>
+                        <li>
+                            <a href="">Legal</a>
+                            <a href="">Safety & Privacy Center</a>
+                            <a href="">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="">Cookies</a>
+                            <a href="">About Ads</a>
+                            <a href="">Accessibility</a>
+                        </li>
+                        <li>
+                            <a href="">Cookies</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="language-btn">
+                    <button id="zoom-in"><i class="fa-solid fa-globe"></i> English</button>
+                </div>
+            </div>
+        </section>
+        <!-- main section -->
+        <section class="main-container">
+            <div class="sub-container">
+                <!-- playlists -->
+                <div class="playlists">
+                    <!-- spotify-pl : Popular Artists -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Popular Artists</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebcb6926f44f620555ba444fca"
+                                    style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Pritam</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebb19af0ea736c6228d6eb539c"
+                                    style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>A.R. Rahman</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="./images/arijit.jpeg" style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Arijit Singh</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616100005174a038d7d87f8577bbb9686bd3"
+                                    style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Sahin-Jigar</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="./images/anirudh.jpeg" style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Anirudh Ravichander</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="./images/vishal.jpeg" style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Vishal Mishra</h4>
+                                <p>Artist</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6761610000e5ebc40600e02356cc86f0debe84"
+                                    style="border-radius: 50%;" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Atif Aslam</h4>
+                                <p>Artist</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- spotify-pl : Popular Albums -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Popular Albums</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2736404721c1943d5069f0805f3" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Aashiqui 2</h4>
+                                <p><a href="">Mithoon</a>, <a href="">Ankit Tiwari</a>, <a href="">Jeet Gannguli</a></p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b273bb25239324c4e16ae01fda36" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Making Memories</h4>
+                                <p><a href="">Karan Aujila</a>, <a href="">Ikky</a></p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2731d1cc2e40d533d7bcebf5dae" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Moosetape</h4>
+                                <p><a href="">Sidhu Moose Wala</a></p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d00001e02707ea5b8023ac77d31756ed4" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Yeh Jawaani Haai Deewani</h4>
+                                <p><a href="">Pritam</a></p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2739bb2d30b01ac2cada8a8ad03" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Ek Tha Raja</h4>
+                                <p><a href="">Badshah</a></p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2735f3ede47954a93aa03efe5f9" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Animal</h4>
+                                <p><a href="">Manan Bhardwaj</a>, <a href="">Vishal Mishra</a>, <a href="">Jaani</a></p>
+                            </div>
+
+                            
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67616d0000b2731a8c4618eda885a406958dd0" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Still Rollin</h4>
+                                <p><a href="">Shubh</a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- spotify-pl : Popular Radios -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Popular Radio</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/4YRxDV8wJFPHPTeXepOstw/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Neha Kakkar, Pritam, KK and...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/2FKWNmZWDBZR4dE5KX4plR/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Garry Sandhu, Ranjit Bawa,...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/0GF4shudTAFv8ak9eWdd4Y/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Mohammed Rafi, Asha Bhosle,...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/1mYsTxnqsietFxj1OgoGbG/en"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Shankar Mahadevan,</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/0oOet2f43PA68X5RxKobEy/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Sonu Nigam, Sunidhi Chauhan</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/4fEkbug6kZzzJ8eYX6Kbbp/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Mohit Chauhan, Ankit Tiwari,Javed...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://seeded-session-images.scdn.co/v2/img/540/r/artist/70B80Lwx2sxti0M1Ng9e8K/de"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">With Kumar Sanu, Alka Yagnik,...</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- spotify-pl : Featured Charts -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Featured Charts</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your weekly update of the most playe...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_us_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your weekly update of the most playe...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your daily update of the most playe...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_us_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your weekly update of the most playe...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your weekly update of the most viral...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_us_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your weekly update of the most viral...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_in_default.jpg"
+                                    alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Your daily update of the most played...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- spotify-pl : Spotify Playlists -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Spotify Playlists</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f00000002472120b92edea982b5feb264" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Soft instrumental Jazz for all your...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f0000000255be59b7be2929112e7ac927" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Chill beats,lofi vibes,new tracks...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f00000002df2ac012e53ecdf46487d013" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">The hottest 50. <br>Cover:Billie Eilish</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f000000025db1394baf8862336f19ac83" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Calm your mind from anxiety with gentle...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f00000002b43eac9f01f8b865662b5c29" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">The biggest songs of the 2020s. Cover: D...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f000000029385ce8e365c6b8ba3f70d4b" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Just lean back and enjoy relaxed...</p>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67706f0000000228a53ce1737136d0c25bcb1f" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <p style="font-size: 0.9rem;">Instrumental house for when you nee...</p>
+                            </div>
+
+
+
+
+
+
+                        </div>
+                    </div>
+                    <!-- spotify-pl : Trending Episodes -->
+                    <div class="spotify-pl">
+                        <ul>
+                            <h2>Trending Episodes</h2>
+                            <span>Show all</span>
+                        </ul>
+                        <div class="card">
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6765630000ba8af7aa78ee9599fa86b8289d28" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Welcome back, RJ Balaji-...</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Jun 2021 .
+                                    15 min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab67656300005f1f099a357ed0a2a39424f2903d" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>#73: Hotel Of <br> Horrors (Serial...</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Jun 2021 .
+                                    93 min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6765630000ba8a9d2abc777125c182cf99b60f" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Anubis : God Of Death - Part 1</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Jun 2021 .
+                                    16 min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6765630000ba8a9d2abc777125c182cf99b60f" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Anubis : God Of Death - Part 2</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Jun 2021 .
+                                    13 min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6765630000ba8a36dbb0b2d65004488fcc322f" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Mahabharata Episode 1:....</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Apr 2014 .
+                                    24 min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/ab6765630000ba8a6807eaee16197dac1dd840e8" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Ep 8 - Ye Na Thi Hamari Quismat</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">Aug 2020 . 3
+                                    min</span>
+                            </div>
+
+                            <div class="item">
+                                <img src="https://i.scdn.co/image/f7304cca71d5cffd2ccc15de8c1759b9d8425530" alt="">
+                                <div class="play-btn">
+                                    <span><i class="ri-play-fill"></i></span>
+                                </div>
+                                <h4>Asatha Povathu Yaru | Madurai...</h4>
+                                <span style="color: rgb(110, 110, 110); font-size: 15px; font-weight: 500;">May 2021 .
+                                    11 min</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- footer -->
+                    <div class="footer-container">
+                        <div class="footer">
+                            <div class="footer-links">
+                                <div class="main-heading">
+                                    <h2>Company</h2>
+                                    <ul class="sub-links">
+                                        <li><a href="">About</a></li>
+                                        <li><a href="">Jobs</a></li>
+                                        <li><a href="">For the Record</a></li>
+                                    </ul>
+                                </div>
+                                <div class="main-heading">
+                                    <h2>Communities</h2>
+                                    <ul class="sub-links">
+                                        <li><a href="">For Artists</a></li>
+                                        <li><a href="">Developers</a></li>
+                                        <li><a href="">Advertising</a></li>
+                                        <li><a href="">Investors</a></li>
+                                        <li><a href="">Vendors</a></li>
+                                    </ul>
+                                </div>
+                                <div class="main-heading">
+                                    <h2>Useful links</h2>
+                                    <ul class="sub-links">
+                                        <li><a href="">Support</a></li>
+                                        <li><a href="">Free Mobile App</a></li>
+                                    </ul>
+                                </div>
+                                <div class="main-heading">
+                                    <h2>Spotify Plans</h2>
+                                    <ul class="sub-links">
+                                        <li><a href="">Premium Individual</a></li>
+                                        <li><a href="">Premium Duo</a></li>
+                                        <li><a href="">Premium Family</a></li>
+                                        <li><a href="">Premium Student</a></li>
+                                        <li><a href="">Spotify Free</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="social-links">
+                                <div>
+                                    <i class="fa-brands fa-instagram"></i>
+                                    <i class="fa-brands fa-twitter"></i>
+                                    <i class="fa-brands fa-facebook"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- copyright -->
+                    <hr>
+                    <div class="cr">
+                        <p>&copy; 2024 Spotify AB</p>
+                    </div>
+                </div>
+                <!-- preview-signup free -->
+                <div class="preview">
+                    <div class="text">
+                        <h4>Preview of Spotify</h4>
+                        <p>Sign up to get unlimited songs and podcasts with occasional ads. No credit card needed.</p>
+                    </div>
+                    <div class="preview-btn"><button id="zoom-in">Sign up free</button></div>
+                </div>
+            </div>
+        </section>
+    </section>
+</body>
+
+</html>
